@@ -1,5 +1,14 @@
-import '@/styles/globals.css'
+import "@/styles/globals.css";
+import Header from "@/components/Head";
+import  { wrapper } from "../redux/store";
 
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+ function App({ Component, pageProps }) {
+  return (
+      <div>
+        <Header />
+        <Component {...pageProps} />
+      </div>
+  );
 }
+
+export default wrapper.withRedux(App);
